@@ -1,12 +1,15 @@
-/*export class Convert{
-	public static toHex(argumnet : number){
-		var arg = argumnet;
-		var hex='',y='';
-		var x,rem;
+import { Pipe,PipeTransform } from '@angular/core';
+
+@Pipe ({ name:'hexPipe' })
+export class hexPipe implements PipeTransform{
+	transform(rgb: number) : string {
+		let arg = rgb;
+		let hex='',y='';
+		let x=0;
 			do{
-				x = parseInt(arg/16);
-				rem = arg % 16 ;
-				arg = parseInt(arg/16);
+				x = Math.floor(arg/16);
+				let rem = arg % 16 ;
+				arg = Math.floor(arg/16);
 					
 				if(rem <= 9){
 					y+=rem;
@@ -50,15 +53,15 @@
 				}
 
 			}while(x!=0);
+			if (y.length==1) {
+				y+='0';
+			}
 
 
 			for (var j = y.length - 1; j >= 0; j--) {
 				hex+=y[j];
 			}
 
-			//console.log(hex);
 			return hex;
-						
 	}
 }
-*/

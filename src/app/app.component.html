@@ -3,9 +3,11 @@
     {{ title }}!
   </h1>
 </div>
-<!--<div align="center" style="margin-top: 10px;">--><pre style="text-align: center;vertical-align: auto;">rgb({{red}},{{green}},{{blue}})  || <!-- hexcode: {{hexcode}}--></pre><!--</div>-->
+<pre style="text-align: center;">rgb({{red}},{{green}},{{blue}})  </pre>
+<pre style="text-align: center;">Alternately: #{{red|hexPipe}}{{green|hexPipe}}{{blue|hexPipe}}</pre>
 <div style="display: grid; height: 255px;width: 255px; margin: auto;border: 10px solid rgb(0,0,0)
-;" [style.background]="bgcolor" >
+;" [style.background]="bgcolor" ><br>
+
 	
 </div>
 
@@ -15,16 +17,18 @@
 	<input type="range" min="0" max="255" class="slider" style="width: 255px;" [(ngModel)]="red" (input)="update()">
 </div>
 
-<div title="slider" align="center" style="margin:auto;background: linear-gradient(to right,white,blue);margin-top:10px;width: 280px;">
-	<label style="float: left;">Less blue</label>
-	<label style="float: right">More blue</label>
-	<input type="range" min="0" max="255" class="slider" style="width: 255px;" [(ngModel)]="blue" (input)="update()">
-</div>
 <div title="slider" align="center" style="margin:auto;background: linear-gradient(to right,white,green);margin-top:10px;width: 280px;">
 	<label style="float: left;">Less green</label>
 	<label style="float: right">More green</label>
 	<input type="range" min="0" max="255" class="slider" style="width: 255px;" [(ngModel)]="green" (input)="update()">
 </div>
+
+<div title="slider" align="center" style="margin:auto;background: linear-gradient(to right,white,blue);margin-top:10px;width: 280px;">
+	<label style="float: left;">Less blue</label>
+	<label style="float: right">More blue</label>
+	<input type="range" min="0" max="255" class="slider" style="width: 255px;" [(ngModel)]="blue" (input)="update()">
+</div>
+
 
 
 <div align="center"></div>
